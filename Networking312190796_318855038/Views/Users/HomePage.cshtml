@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cinema Sami</title>
+    <style>
+        .button {
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            font: italic small-caps bold 16px/2 cursive;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://i2.wp.com/maryfarmarpta.org/wp-content/uploads/2019/03/popcorn1.jpg?resize=600%2C559&ssl=1'); background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
+    <div style="position: relative; width: 0; height: 0">
+        <div style="position: absolute; left: 100px; top: 50px">
+            <input id="Button1" type="button" value="Movies Gallery" class="button" onclick="location.href='@Url.Action("MoviesGallery", "Movies")' ">
+        </div>
+        <div style="position: absolute; left: 350px; top: 50px">
+            <input id="Button4" type="button" class="button" value="Shoping Cart" onclick="location.href='@Url.Action("ShopingCart", "Users")' " />
+        </div>
+        <div style="position: absolute; left: 600px; top: 50px">
+            <input id="Button4" type="button" class="button" value="About us" />
+        </div>
+    </div>
+    <div style="position: absolute; left: 400px; top: 400px">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Koral Moyal 318855038 Nave Shelly 312190796</p>
+        </footer>
+    </div>
+</body>
+</html>

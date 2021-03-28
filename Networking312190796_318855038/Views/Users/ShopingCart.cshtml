@@ -1,0 +1,82 @@
+﻿@model Networking312190796_318855038.ViewModel.MoviesViewModel
+@using Networking312190796_318855038.Controllers
+@{
+    ViewBag.Title = "showsearch";
+}
+<!DOCTYPE html>
+<html>
+<title>Search Movie</title>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font: italic small-caps bold 16px/2 cursive;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+        tr:nth-child(odd) {
+            background-color: #f2f2f2
+        }
+        th {
+            background-color: #f4511e;
+            color: white;
+        }
+        .button {
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 16px;
+            font: italic small-caps bold 16px/2 cursive;
+            padding: 15px 32px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 4px 2px;
+        }
+        .p2 {
+            font: italic small-caps bold 16px/2 cursive;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchMovie</title>
+</head>
+<body style="background-image: url('https://i2.wp.com/maryfarmarpta.org/wp-content/uploads/2019/03/popcorn1.jpg?resize=600%2C559&ssl=1'); background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
+    </br>
+    <p class="p2"> Search results:</p>
+    </br>
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>seat</th>
+            <th>row</th>
+            <th>date</th>
+            <th>hour</th>
+            <th>HallNum</th>
+            <th> </th>
+            <th> </th>
+        </tr>
+        @foreach (var ticket in TicketsController.ticketxss)
+        {
+    <tr>
+        <td>@ticket.Name</td>
+        <td>@ticket.seat</td>
+        <td>@ticket.row</td>
+        <td>@ticket.date</td>
+        <td>@ticket.hour</td>
+        <td>@ticket.HallNum</td>
+        <td><input type='button' class="button" value='Buy Ticket' onclick="location.href='@Url.Action("BuyTicket", "Tickets",new {name = @ticket.Name,dates=@ticket.date,hours=@ticket.hour,HallNums=@ticket.HallNum })'" /></td>
+        <td><input type='button' class="button" value='Remove Ticket' onclick="location.href='@Url.Action("Remove", "Tickets",new {name = @ticket.Name,dates=@ticket.date,hours=@ticket.hour,HallNums=@ticket.HallNum })'" /></td>
+    </tr>
+        }
+    </table>
+</body>
+</html>

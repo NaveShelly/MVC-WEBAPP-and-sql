@@ -1,0 +1,96 @@
+﻿@model Networking312190796_318855038.Models.Users
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cinema Sami</title>
+    <style>
+        body{font-family:Arial, Helvetica, sans-serif;}
+        form {border: 3px solid #f1f1f1;}
+        input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #f4511e;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 60%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <form action="Submit" method="post">
+            <div class="imgcontainer">
+                <img src="https://www.creativefabrica.com/wp-content/uploads/2020/01/31/Red-Carpet-Filmstrip-Award-Movie-Logo-Graphics-1.jpg" alt="Avatar" class="avatar">
+            </div>
+            <div style="background-color:#f1f1f1" class="container">
+                @Session["Result"]
+                <label for="uame"><b>USER ID</b></label>
+                <input id="Text" name="uname" type="text" placeholder="Enter id" required>
+                <label for="psw"><b>Password</b></label>
+                <input id="Text1" type="password" placeholder="Enter Password" name="password" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" onclick="myFunction()">Show Password
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+        </form>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("Text1");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

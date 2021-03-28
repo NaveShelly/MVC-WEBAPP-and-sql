@@ -1,0 +1,103 @@
+﻿@model Networking312190796_318855038.ViewModel.MoviesViewModel
+@using  Networking312190796_318855038.Models
+<!DOCTYPE html>
+
+<html>
+<title>Search Movie</title>
+<head>
+    <style>
+        body {
+              font: italic small-caps bold 16px/2 cursive;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #f4511e;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            button:hover {
+                opacity: 0.8;
+            }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 60%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+         .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+    font: italic small-caps bold 16px/2 cursive;
+}
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchMovie</title>
+</head>
+<body style="background-image: url('https://i2.wp.com/maryfarmarpta.org/wp-content/uploads/2019/03/popcorn1.jpg?resize=600%2C559&ssl=1'); background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
+    <div>
+        <form action="SearchMovies" method="post">
+            <div style="background-color:#f1f1f1" class="container">
+                Enter Details to search a movie
+                <br />
+                Name <input id="Text1" placeholder="optional" title="optional" name="Name" type="text" />
+                <br />
+                Date <input id="Text1" placeholder="optional" name="Date" type="text" />
+                <br />
+                Hour <input id="Text1" placeholder="optional" name="Hour" type="text" />
+                <br />
+                Type <input id="Text1" placeholder="optional" name="Category" type="text" />
+                <br />
+                <input id="submit1" class="button" type="submit" value="Search Movie" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

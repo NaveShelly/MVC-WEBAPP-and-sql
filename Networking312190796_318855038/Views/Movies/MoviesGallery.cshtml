@@ -1,0 +1,99 @@
+﻿@model Networking312190796_318855038.ViewModel.MoviesViewModel
+@using Networking312190796_318855038.Models
+@{
+    ViewBag.Title = "MoviesGallery";
+}
+
+<!DOCTYPE html>
+
+<html>
+<title>Search Movie</title>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchMovie</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font: italic small-caps bold 16px/2 cursive;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+          tr:nth-child(odd) {
+            background-color: #f2f2f2
+        }
+        th {
+            background-color: #f4511e;
+            color: white;
+        }
+        .button {
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 16px;
+            font:italic small-caps bold 16px/2 cursive;
+            padding: 15px 32px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 4px 2px;
+        }
+        .p2 {
+  font: italic small-caps bold 16px/2 cursive;
+}
+
+    </style>
+</head>
+<body style="background-image: url('https://i2.wp.com/maryfarmarpta.org/wp-content/uploads/2019/03/popcorn1.jpg?resize=600%2C559&ssl=1'); background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
+    </br>
+    <p class="p2"> You can search movie sorting by name, rating, date and price:</p>
+    <br />
+    <input type='button' class="button" value='Search Movie' onclick="location.href='@Url.Action("SearchMovie", "Movies")'">
+    <input type='button' class="button" value='Price Increase' onclick="location.href='@Url.Action("SearchPriceIncrease", "Movies")'">
+    <input type='button' value='Price Decrease' class="button" onclick="location.href='@Url.Action("SearchPriceDecrease", "Movies")'">
+    <input type='button' class="button" value='Most Popular' onclick="location.href='@Url.Action("MostPopular", "Movies")'"> 
+    </br>
+    </br>
+    </br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Discription</th>
+            <th>date</th>
+            <th>hour</th>
+            <th>HallNum</th>
+            <th>img</th>
+            <th>age</th>
+            <th>price</th>
+            <th> </th>
+        </tr>
+        @foreach (Movies movies in Model.moviess)
+        {
+    <tr>
+        <td>@movies.Name</td>
+        <td>@movies.Category</td>
+        <td>@movies.Discription</td>
+        <td>@movies.date</td>
+        <td>@movies.hour</td>
+        <td>@movies.HallNum</td>
+        <td><img src=@movies.img width="75 px"></td>
+        <td>@movies.age</td>
+        <td>@movies.price</td>
+        <td><input type='button' class="button" value='Buy Ticket' onclick="location.href='@Url.Action("BuyTicket", "Tickets",new {name = @movies.Name,dates=@movies.date,hours=@movies.hour,HallNums=@movies.HallNum })'" /></td>
+    </tr>
+        }
+    </table>
+</body>
+</html>
+

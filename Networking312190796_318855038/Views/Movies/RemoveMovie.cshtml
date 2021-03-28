@@ -1,0 +1,108 @@
+﻿@model Networking312190796_318855038.Models.Movies
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> View </title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 60px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+            }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* Add padding to container elements */
+        .container {
+            padding: 16px;
+        }
+
+        /* Clear floats */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .p2 {
+            font: italic small-caps bold 16px/2 cursive;
+        }
+
+        .p3 {
+            font: italic small-caps bold 16px/2 cursive;
+            font-size: 30px;
+        }
+
+        .button {
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            font: italic small-caps bold 16px/2 cursive;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://i2.wp.com/maryfarmarpta.org/wp-content/uploads/2019/03/popcorn1.jpg?resize=600%2C559&ssl=1'); background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
+    <div class="col ">
+        <div class="col-75">
+            <div class="container">
+                <p class="p3"> Delete a movie</p>
+                <p class="p2"> Please enter details of a movie to remove</p>
+
+                @Session["Result"]
+                @using (Html.BeginForm("Remove", "Movies", FormMethod.Post))
+                {
+                    <b>Moive name</b>
+                    <br>
+                    @Html.TextBoxFor(m => m.Name) @Html.ValidationMessageFor(x => x.Name)
+                    <br />
+                    <b>Moive date</b>
+                    <br>
+                    @Html.TextBoxFor(m => m.date) @Html.ValidationMessageFor(x => x.date)
+                    <br />
+                    <b>Moive hour</b>
+                    <br>
+                    @Html.TextBoxFor(m => m.hour) @Html.ValidationMessageFor(x => x.hour)
+                    <br />
+                    <b>Moive hall number</b>
+                    <br>
+                    @Html.TextBoxFor(m => m.HallNum) @Html.ValidationMessageFor(x => x.HallNum)
+                    <br />
+                    <input id="Submit1" type="submit" class="button" value="Remove MOVIE" />
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
